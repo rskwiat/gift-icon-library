@@ -48,7 +48,10 @@ const config = {
       {
         test: /\.(scss)$/,
         use: [
-          MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'
+          MiniCssExtractPlugin.loader, 
+          'css-loader?modules&localIdentName=[local]-[hash:base64:5]',
+          'postcss-loader', 
+          'sass-loader'
         ],
       },
     ]

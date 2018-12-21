@@ -1,14 +1,12 @@
+require('@scss/main.scss');
 import 'babel-polyfill';
-require('../scss/main.scss');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const App = () => (
-  <div>
-    <h1>Application </h1>
-  </div>
+import Main from './main';
+
+ReactDOM.render(
+  <Main />,
+  document.getElementById('root')
 );
-
-
-ReactDOM.render(<App />, document.getElementById('root'));
