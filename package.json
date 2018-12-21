@@ -1,0 +1,35 @@
+{
+  "name": "gift-icon-library",
+  "version": "1.0.0",
+  "description": "Open Sourcing an internal Icon Gallery from Mediabrix - updating the UI, and Express API Server",
+  "main": "index.js",
+  "scripts": {
+    "dev:start": "NODE_ENV=development nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rskwiat/gift-icon-library.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rskwiat/gift-icon-library/issues"
+  },
+  "homepage": "https://github.com/rskwiat/gift-icon-library#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "eslint": "^5.10.0",
+    "eslint-plugin-react": "^7.11.1",
+    "nodemon": "^1.18.9",
+    "sass-lint": "^1.12.1"
+  }
+}
