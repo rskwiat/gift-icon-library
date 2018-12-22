@@ -1,4 +1,10 @@
 $green: rgb(0, 255, 0);
+$brand: #1E242B;
+$white: #FFF;
+
+$orange: #FF671B;
+$green: #77BC1F;
+$blue: #00A7CE;
 
 * {
   box-sizing: border-box;
@@ -10,4 +16,28 @@ html {
 
 body {
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+:global {
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 2rem;
+  }
+}
+
+.header {
+  background: $brand;
+
+  h1 {
+    margin: 0;
+    font-size: 3.2rem;
+    color: $white;
+    padding: 1rem 0;
+    span {
+      color: $green;
+    }
+  }
 }

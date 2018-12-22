@@ -12,11 +12,10 @@ const chalk = require('chalk');
 
 const mode = process.env.NODE_ENV;
 
-
 const SRC = {
   js: path.resolve(__dirname, 'src/js'),
   scss: path.resolve(__dirname, 'src/scss'),
-  bundle: path.resolve(__dirname, 'src/js/app.js'),
+  bundle: path.resolve(__dirname, 'src/js/index.js'),
   public: path.resolve(__dirname, 'public'),
   html: path.resolve(__dirname, 'src/index.html'),
 }
