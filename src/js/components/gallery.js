@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import Proptypes from 'prop-types';
 import { connect } from 'react-redux';
 import Loading from './loading';
 import { loadIcons } from '../actions';
 
 class Gallery extends Component {
+  static propTypes = {
+    loadIcons: Proptypes.func,
+    gallery: Proptypes.array,
+  }
 
   componentDidMount() {
     this.props.loadIcons();

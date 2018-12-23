@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The header component should render with no props 1`] = `
+<Header>
+  <header
+    className="header"
+  >
+    <div
+      className="container"
+    >
+      <h1>
+        <span />
+         
+      </h1>
+    </div>
+  </header>
+</Header>
+`;
+
+exports[`The header component should render with props 1`] = `
+<Header
+  name="Headline"
+  subhead="Test Subhead"
+>
+  <header
+    className="header"
+  >
+    <div
+      className="container"
+    >
+      <h1>
+        <span>
+          Headline
+        </span>
+         
+        Test Subhead
+      </h1>
+    </div>
+  </header>
+</Header>
+`;

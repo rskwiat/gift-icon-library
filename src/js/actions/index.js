@@ -3,7 +3,7 @@ import {
 } from './types';
 
 export const loadIcons = () => async (dispatch) => {
-  const res = await fetch('/api/b', { method: 'GET' });
+  const res = await fetch('/api', { method: 'GET' });
   const data = await res.json();
 
   dispatch({

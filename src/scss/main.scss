@@ -35,9 +35,20 @@ body {
     margin: 0;
     font-size: 3.2rem;
     color: $white;
+    font-weight: 800;
     padding: 1rem 0;
     span {
       color: $green;
     }
+  }
+}
+
+.loading {
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h3 {
+    margin: 0;
   }
 }
