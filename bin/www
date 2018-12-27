@@ -7,7 +7,7 @@
  */
 
 const app = require('../app');
-const debug = require('debug')('immaterial:server');
+const debug = require('debug')('gifticon:server');
 const http = require('http');
 
 /**
@@ -82,7 +82,11 @@ function onError(error) {
  */
 
 function onListening() {
+  const { NODE_ENV } = process.env;
   const addr = server.address();
-  const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
+  const bind = typeof addr === 'string' ? `pipe ${addr}` : `${addr.port}`;
+  if (NODE_ENV === 'development') {
+    console.log(`Listening on http://localhost:${bind}`);
+  }
   debug(`Listening on ${bind}`);
 }

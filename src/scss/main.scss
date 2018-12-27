@@ -2,6 +2,8 @@ $green: rgb(0, 255, 0);
 $brand: #1E242B;
 $white: #FFF;
 
+$background: rgba(227, 231, 235, 0.23);
+
 $orange: #FF671B;
 $green: #77BC1F;
 $blue: #00A7CE;
@@ -17,6 +19,7 @@ html {
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  background: $background;
 }
 
 :global {
@@ -41,6 +44,30 @@ body {
       color: $green;
     }
   }
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  margin: 6rem auto;
+  ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -2rem;
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $white;
+      margin: 2rem;
+      padding: 3rem;
+      cursor: pointer;
+      border-radius: 6rem;
+    }
+  }
+
 }
 
 .loading {
