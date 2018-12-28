@@ -3,6 +3,8 @@ $brand: #1E242B;
 $white: #FFF;
 
 $background: rgba(227, 231, 235, 0.23);
+$overlay: rgba(255, 255, 255, 0.75);
+$icon-overlay: rgba(255, 255, 255, 0.9);
 
 $orange: #FF671B;
 $green: #77BC1F;
@@ -20,6 +22,27 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background: $background;
+}
+
+
+h2 {
+ font-size: 2.4rem;
+}
+
+h3 {
+ font-size: 2.2rem;
+}
+
+h4 {
+ font-size: 2rem;
+}
+
+h5 {
+ font-size: 1.8rem;
+}
+
+h6 {
+  font-size: 1.6rem;
 }
 
 :global {
@@ -67,7 +90,59 @@ body {
       border-radius: 6rem;
     }
   }
+}
 
+.overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: $overlay;
+  top: 0;
+  left: 0;
+  animation: openAnimation 750ms ease-in-out forwards;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+  @media (min-width: 767px) {
+    padding: 0;
+  }
+}
+
+.btn-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.icon {
+  max-width: 640px;
+  width: 100%;
+  margin: 8rem auto;
+  padding: 4rem;
+  background: $icon-overlay;
+  border-radius: 3rem;
+
+  h4 {
+    text-transform: capitalize;
+    margin: 0 0 2rem;
+    color: $brand;
+  }
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: 320px;
+  }
+}
+
+@keyframes openAnimation {
+  0% {
+    transform: translateY(300%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 .loading {

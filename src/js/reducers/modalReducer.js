@@ -8,7 +8,7 @@ export default (state = null, action) => {
     case OPEN_MODAL:
       return action.payload;
     case CLOSE_MODAL:
-      return state;
+      return null;
     default:
       return state;
   }

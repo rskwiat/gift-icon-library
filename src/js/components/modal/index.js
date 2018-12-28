@@ -3,22 +3,31 @@ const styles = require('@scss/main.scss');
 import React, { Component } from 'react';
 import Proptypes from 'prop-types';
 import { connect } from 'react-redux';
+import { closeModal } from '@src/actions';
+
+import CloseButton from './closeButton';
+import Icon from './Icon';
 
 class Modal extends Component {
   static propTypes = {
     modal: Proptypes.object,
+    closeModal: Proptypes.func,
   }
 
   closeModal = () => {
-    console.log('closing modal');
+    this.props.closeModal();
   }
 
-  renderModal = () => {
-
+  renderModal = (modal) => {
     return (
-      <div>
-        <div onClick={this.closeModal()}>Close Button</div>
-        rendering a modal
+      <div className={styles['overlay']}>
+        <CloseButton
+          onClick={() => this.closeModal()}
+        />
+        <Icon
+          name={modal.name}
+          svg={modal.svgURL}
+        />
       </div>
     );
   }
@@ -28,7 +37,7 @@ class Modal extends Component {
       modal,
     } = this.props;
 
-    return modal ? this.renderModal() : <span />;
+    return modal ? this.renderModal(modal) : <span />;
   }
 }
 
@@ -39,5 +48,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(
-  mapStateToProps, null
+  mapStateToProps, { closeModal }
 )(Modal);

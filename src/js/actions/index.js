@@ -1,6 +1,7 @@
 import {
   LOAD_ICONS,
   OPEN_MODAL,
+  CLOSE_MODAL,
 } from './types';
 
 export const loadIcons = () => async (dispatch) => {
@@ -18,6 +19,15 @@ export const openModal = (props) => {
     dispatch({
       type: OPEN_MODAL,
       payload: props,
+    });
+  };
+};
+
+export const closeModal = () => {
+  return (dispatch) => {
+    dispatch({
+      type: CLOSE_MODAL,
+      payload: null,
     });
   };
 };

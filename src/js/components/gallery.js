@@ -3,6 +3,7 @@ const styles = require('@scss/main.scss');
 import React, { Component } from 'react';
 import Proptypes from 'prop-types';
 import { connect } from 'react-redux';
+import Loading from './loading';
 import { loadIcons, openModal } from '../actions';
 
 class Gallery extends Component {
@@ -31,11 +32,7 @@ class Gallery extends Component {
     );
   }
 
-  render() {
-    const {
-      gallery,
-    } = this.props;
-
+  renderGallery = (gallery) => {
     return (
       <div className={`container ${styles['gallery']}`}>
         <h3>Gallery Icons</h3>
@@ -44,6 +41,14 @@ class Gallery extends Component {
         </ul>
       </div>
     );
+  }
+
+  render() {
+    const {
+      gallery,
+    } = this.props;
+
+    return gallery ? this.renderGallery(gallery) : <Loading />;
   }
 }
 
