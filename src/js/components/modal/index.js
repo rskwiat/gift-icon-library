@@ -8,7 +8,7 @@ import { closeModal } from '@src/actions';
 import CloseButton from './closeButton';
 import Icon from './Icon';
 
-class Modal extends Component {
+export class Modal extends Component {
   static propTypes = {
     modal: Proptypes.object,
     closeModal: Proptypes.func,

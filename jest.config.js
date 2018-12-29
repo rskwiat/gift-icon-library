@@ -30,6 +30,7 @@ module.exports = {
     "\\.(jpg)$": "identity-obj-proxy",
     "\\.(png)$": "identity-obj-proxy",
     "\\.(svg)$": "<rootDir>/src/__mocks__/mock-asset.js",
+    "^@src(.*)$": "<rootDir>/src/js/$1",
   },
   "snapshotSerializers": ["enzyme-to-json/serializer"],
   "setupFiles": ["<rootDir>/jest.setupFile.js"],

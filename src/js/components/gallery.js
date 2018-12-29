@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import Loading from './loading';
 import { loadIcons, openModal } from '../actions';
 
-class Gallery extends Component {
+export class Gallery extends Component {
   static propTypes = {
     loadIcons: Proptypes.func,
     openModal: Proptypes.func,
@@ -17,27 +17,25 @@ class Gallery extends Component {
     this.props.loadIcons();
   }
 
-  loadGallery = (gallery) => {
-    return gallery.map((content, i) =>
-      <li key={`${i}-${content.name}`}
-        onClick={() => this.props.openModal(content)}
-      >
-        <img
-          src={content.svgURL}
-          alt={content.name}
-          width="45px"
-          height="45px"
-        />
-      </li>
-    );
-  }
-
   renderGallery = (gallery) => {
     return (
       <div className={`container ${styles['gallery']}`}>
         <h3>Gallery Icons</h3>
         <ul>
-          {this.loadGallery(gallery)}
+          {
+            gallery.map((content, i) =>
+              <li key={`${i}-${content.name}`}
+                onClick={() => this.props.openModal(content)}
+              >
+                <img
+                  src={content.svgURL}
+                  alt={content.name}
+                  width="45px"
+                  height="45px"
+                />
+              </li>
+            )
+          }
         </ul>
       </div>
     );
