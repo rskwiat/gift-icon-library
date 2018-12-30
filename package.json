@@ -4,9 +4,11 @@
   "description": "Open Sourcing an internal Icon Gallery from Mediabrix - updating the UI, and Express API Server",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf public",
+    "build": "NODE_ENV=production webpack -p",
+    "postbuild": "node ./bin/www",
     "dev:start": "NODE_ENV=development nodemon ./bin/www",
-    "test": "NODE_ENV=test jest",
-    "test:update": "NODE_ENV=test jest --u"
+    "test": "NODE_ENV=test jest"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
+    "rimraf": "^2.6.2",
     "serve-favicon": "^2.5.0",
     "webfontloader": "^1.6.28",
     "webpack": "^4.28.1"
