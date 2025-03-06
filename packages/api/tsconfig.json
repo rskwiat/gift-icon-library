@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsxImportSource": "hono/jsx"
+  },
+  "paths": {
+    "@/api/*": ["./src/*"]
+  }
+}
