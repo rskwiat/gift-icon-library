@@ -2,7 +2,8 @@
   "name": "api",
   "scripts": {
     "dev": "bun run --hot src/index.ts",
-    "lint": "biome lint ."
+    "lint": "biome lint .",
+    "format": "biome format --write ."
   },
   "dependencies": {
     "eslint": "^9.21.0",

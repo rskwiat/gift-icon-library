@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "bun run --filter '*' dev",
-    "lint": "bun run --filter '*' lint"
+    "lint": "bun run --filter '*' lint",
+    "format": "bun run --filter '*' format"
   },
   "devDependencies": {
     "@types/bun": "latest",
@@ -14,6 +15,6 @@
     "typescript": "^5"
   },
   "workspaces": [
-    "packages/*"
+    "app/*"
   ]
 }
