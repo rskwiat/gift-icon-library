@@ -3,6 +3,8 @@ import { cors } from 'hono/cors';
 
 import * as HttpStatusCodes from '../constants/status-codes';
 import * as HttpStatusMessages from '../constants/status-messages';
+import env from '../env';
+import { Logger } from '../middlewares/logger';
 import type { AppBindings } from './types';
 
 export function createRouter() {
@@ -24,11 +26,12 @@ export function createRouter() {
 
 export default function CreateApp() {
   const app = createRouter();
+  app.use(Logger());
 
   app.use(
     '/api/*',
     cors({
-      origin: 'https://localhost:3000',
+      origin: env.APP_URL,
     }),
   );
 

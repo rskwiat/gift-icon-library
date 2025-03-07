@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "bun run --filter '*' dev",
+    "test": "bun run --filter '*' test",
     "lint": "bun run --filter '*' lint",
     "format": "bun run --filter '*' format"
   },

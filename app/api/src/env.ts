@@ -1,7 +1,7 @@
-import { config } from 'dotenv';
-import { expand } from 'dotenv-expand';
 // biome-ignore lint/style/useNodejsImportProtocol: <explanation>
 import path from 'path';
+import { config } from 'dotenv';
+import { expand } from 'dotenv-expand';
 import { z } from 'zod';
 
 expand(
@@ -25,6 +25,7 @@ const EnvSchema = z.object({
     'trace',
     'silent',
   ]),
+  APP_URL: z.string().default('https://localhost'),
 });
 
 export type Env = z.infer<typeof EnvSchema>;

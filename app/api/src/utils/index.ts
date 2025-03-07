@@ -2,7 +2,8 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { v4 as uuidv4 } from 'uuid';
 
-export const images = new Set<{ id: string; name: string }>();
+export const images = new Set<{ id: number; name: string; key: string }>();
+let nextId = 1;
 
 export const setImages = async () => {
   try {
@@ -15,16 +16,18 @@ export const setImages = async () => {
 
     for (const file of imageFiles) {
       images.add({
-        id: uuidv4(),
+        id: nextId,
+        key: uuidv4(),
         name: file,
       });
+      nextId++;
     }
   } catch (error) {
     console.error(`Error reading images directory: ${JSON.stringify(error)}`);
   }
 };
 
-export const getImageByUUID = (uuid: string) => {
+export const getImageByUUID = (uuid: number) => {
   for (const image of images) {
     if (image.id === uuid) {
       return image;
