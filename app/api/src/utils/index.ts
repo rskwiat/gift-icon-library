@@ -2,11 +2,20 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { v4 as uuidv4 } from 'uuid';
 
-export const images = new Set<{ id: number; name: string; key: string }>();
+export const images = new Set<{
+  id: number;
+  uuid: string;
+  path: string;
+  name: string;
+}>();
 let nextId = 1;
 
 export const setImages = async () => {
   try {
+    if (images.size > 0) {
+      return;
+    }
+
     const imagesDir = path.join(__dirname, '../../public/images');
     const files = await fs.readdir(imagesDir);
 
@@ -17,8 +26,9 @@ export const setImages = async () => {
     for (const file of imageFiles) {
       images.add({
         id: nextId,
-        key: uuidv4(),
+        uuid: uuidv4(),
         name: file,
+        path: `/api/images/${file}`,
       });
       nextId++;
     }

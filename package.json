@@ -1,13 +1,5 @@
 {
   "name": "gift-icon-library",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "bun run --filter '*' dev",
-    "test": "bun run --filter '*' test",
-    "lint": "bun run --filter '*' lint",
-    "format": "bun run --filter '*' format"
-  },
   "devDependencies": {
     "@types/bun": "latest",
     "lefthook": "^1.11.2"
@@ -15,6 +7,14 @@
   "peerDependencies": {
     "typescript": "^5"
   },
+  "private": true,
+  "scripts": {
+    "dev": "bun run --filter '*' dev",
+    "test": "bun run --filter '*' test",
+    "lint": "bun run --filter '*' lint",
+    "format": "bun run --filter '*' format"
+  },
+  "type": "module",
   "workspaces": [
     "app/*"
   ]
