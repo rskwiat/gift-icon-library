@@ -1,4 +1,3 @@
-import { useQuery } from '@tanstack/react-query';
 import { create } from 'zustand';
 
 interface Icon {
@@ -17,6 +16,6 @@ const initialState = {
 };
 
 export const useGalleryStore = create<GalleryState>((set) => ({
-  icons: [],
+  ...initialState,
   setIcons: (icons) => set(() => ({ icons })),
 }));

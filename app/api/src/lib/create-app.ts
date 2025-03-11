@@ -5,7 +5,7 @@ import { getMimeType } from 'hono/utils/mime';
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { file } from 'bun';
+
 import * as HttpStatusCodes from '../constants/status-codes';
 import * as HttpStatusMessages from '../constants/status-messages';
 import env from '../env';
@@ -51,7 +51,7 @@ export default function CreateApp() {
   app.use(
     '/api/*',
     cors({
-      origin: 'https://localhost:5173/',
+      origin: env.APP_URL,
     }),
   );
 
