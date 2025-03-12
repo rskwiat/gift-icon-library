@@ -25,7 +25,6 @@ const Gallery = () => {
     <div>
       <Subhead iconTotal={icons.length.toString()} />
 
-      {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
       <Container>
         <div className="grid grid-cols-2 gap-16 p-4 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-8">
           {icons.map((icon) => {
