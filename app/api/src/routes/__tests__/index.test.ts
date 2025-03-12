@@ -1,13 +1,12 @@
+import { describe, expect, it } from 'bun:test';
 import { testClient } from 'hono/testing';
-import { describe, expect, it } from 'vitest';
 
 import { HEALTHCHECK_MESSAGE } from '../../constants/constants';
-import env from '../../env';
 import createApp from '../../lib/create-app';
 
 import router from '../index';
 
-if (env.NODE_ENV !== 'test') {
+if (process.env.ENV !== 'test') {
   throw new Error('NODE_ENV must be test');
 }
 

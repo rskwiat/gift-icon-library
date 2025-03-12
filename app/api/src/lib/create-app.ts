@@ -8,7 +8,6 @@ import path from 'node:path';
 
 import * as HttpStatusCodes from '../constants/status-codes';
 import * as HttpStatusMessages from '../constants/status-messages';
-import env from '../env';
 import { Logger } from '../middlewares/logger';
 import type { AppBindings } from './types';
 
@@ -51,7 +50,7 @@ export default function CreateApp() {
   app.use(
     '/api/*',
     cors({
-      origin: env.APP_URL,
+      origin: process.env.APP_URL,
     }),
   );
 

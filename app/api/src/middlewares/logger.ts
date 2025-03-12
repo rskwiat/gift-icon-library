@@ -1,11 +1,10 @@
 import { pinoLogger } from 'hono-pino';
-import env from '../env';
 export function Logger() {
-  const isProduction = env.NODE_ENV === 'production';
+  const isProduction = process.env.ENV === 'production';
 
   const config = {
     pino: {
-      level: isProduction ? 'debug' : env.LOG_LEVEL || 'info',
+      level: isProduction ? 'debug' : process.env.LOG_LEVEL || 'info',
       ...(isProduction
         ? {}
         : {
