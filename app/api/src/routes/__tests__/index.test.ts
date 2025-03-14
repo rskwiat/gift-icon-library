@@ -6,7 +6,7 @@ import createApp from '../../lib/create-app';
 
 import router from '../index';
 
-if (process.env.ENV !== 'test') {
+if (process.env.NODE_ENV !== 'test') {
   throw new Error('NODE_ENV must be test');
 }
 

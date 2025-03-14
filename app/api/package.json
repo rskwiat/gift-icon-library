@@ -5,7 +5,7 @@
     "dev": "bun run --hot src/index.ts",
     "lint": "biome lint .",
     "format": "biome format --write .",
-    "test": "bun test"
+    "test": "bun --env-file=./env.test test"
   },
   "dependencies": {
     "@hono/zod-openapi": "^0.19.2",

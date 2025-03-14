@@ -26,9 +26,9 @@ const Gallery = () => {
       <Subhead iconTotal={icons.length.toString()} />
 
       <Container>
-        <div className="grid grid-cols-2 gap-16 p-4 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-8">
+        <div className="grid grid-cols-2 gap-8 px-4 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 lg:px-0">
           {icons.map((icon) => {
-            return <GalleryIcon key={icon.key} />;
+            return <GalleryIcon key={icon.key} name={icon.name} />;
           })}
         </div>
       </Container>
